@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "b3cefada-b6e8-43f2-bc5a-b2440171229b",
+		"name": "EduSync",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30164242",
+		"_collection_link": "https://mero-hostel.postman.co/workspace/Tech-Revo~7bbd2589-6084-4070-8b9b-b3c58a9ef7be/collection/30164242-b3cefada-b6e8-43f2-bc5a-b2440171229b?action=share&source=collection_link&creator=30164242"
+	},
+	"item": [
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "prajwolkhadka@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": []
+		}
+	]
+}

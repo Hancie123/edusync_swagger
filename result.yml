@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: EduSync
+  description: EduSync API documentation
+  version: '1.0'
+  x-logo:
+    url: https://github.com/joolfe/logoBanner.png
+    backgroundColor: '#FFFFFF'
+    altText: logo
+  termsOfService: '#'
+  contact:
+    name: EduSync
+    url: https://edusync.shrawanmaharjan.com.np/
+    email: EduSync@gmail.com
+  license:
+    name: MIT
+    url: https://es.wikipedia.org/wiki/Licencia_MIT
+servers:
+  - url: https://edusync.shrawanmaharjan.com.np/
+    description: server
+tags:
+  - name: Public
+  - name: Public > login
+  - name: Admin
+paths:
+  /api/login:
+    post:
+      tags:
+        - Public > login
+      summary: login
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: prajwolkhadka@gmail.com
+                password:
+                  type: integer
+                  example: '1234'
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

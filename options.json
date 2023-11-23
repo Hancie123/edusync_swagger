@@ -1,0 +1,29 @@
+{
+    "info": {
+        "title": "EduSync",
+        "version": "1.0",
+        "description": "EduSync API documentation",
+        "termsOfService": "#",
+        "license": {
+            "name": "MIT",
+            "url": "https://es.wikipedia.org/wiki/Licencia_MIT"
+        },
+        "contact": {
+            "name": "EduSync",
+            "url": "https://edusync.shrawanmaharjan.com.np/",
+            "email": "EduSync@gmail.com"
+        },
+        "xLogo": {
+            "url": "https://github.com/joolfe/logoBanner.png",
+            "backgroundColor": "#FFFFFF",
+            "altText": "logo"
+        }
+        
+    },
+    "servers": [
+        {
+            "url": "https://edusync.shrawanmaharjan.com.np/",
+            "description": "server"
+        }
+    ]
+}
