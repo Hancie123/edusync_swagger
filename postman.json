@@ -34,7 +34,7 @@
 										},
 										{
 											"key": "password",
-											"value": "1234",
+											"value": "password",
 											"type": "text"
 										}
 									]
@@ -58,7 +58,296 @@
 		},
 		{
 			"name": "Admin",
-			"item": []
+			"item": [
+				{
+					"name": "Institutions",
+					"item": [
+						{
+							"name": "show institution detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/institution/:institution_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"institution",
+										":institution_id"
+									],
+									"variable": [
+										{
+											"key": "institution_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show institution detail",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/institution/:institution_id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"institution",
+												":institution_id"
+											],
+											"variable": [
+												{
+													"key": "institution_id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 26 Dec 2023 16:49:33 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 26 Dec 2023 16:49:33 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.11"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"PCPS College\",\n        \"address\": \"Kupondole\",\n        \"email\": \"pcps@gmail.com\",\n        \"established_year\": \"2018\",\n        \"contact_number\": \"9845677786\",\n        \"website_url\": \"pcpscollege.com.np\",\n        \"created_at\": \"2023-12-26T14:55:18.000000Z\",\n        \"updated_at\": \"2023-12-26T14:55:18.000000Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Student Class",
+					"item": [
+						{
+							"name": "create class",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "class_name",
+											"value": "4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/student-class",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student-class"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "create class",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "class_name",
+													"value": "4",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/student-class",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"student-class"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 26 Dec 2023 17:07:23 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 26 Dec 2023 17:07:23 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.11"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"institution_id\": 1,\n        \"class_name\": \"4\",\n        \"updated_at\": \"2023-12-26T17:07:23.000000Z\",\n        \"created_at\": \"2023-12-26T17:07:23.000000Z\",\n        \"id\": 1\n    },\n    \"message\": \"Class created successfully!\"\n}"
+								}
+							]
+						},
+						{
+							"name": "show all class",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student-class",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student-class"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
 		}
 	]
 }

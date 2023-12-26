@@ -18,10 +18,17 @@ info:
 servers:
   - url: https://edusync.shrawanmaharjan.com.np/
     description: server
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
 tags:
   - name: Public
   - name: Public > login
   - name: Admin
+  - name: Admin > Institutions
+  - name: Admin > Student Class
 paths:
   /api/login:
     post:
@@ -38,8 +45,172 @@ paths:
                   type: string
                   example: prajwolkhadka@gmail.com
                 password:
+                  type: string
+                  example: password
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/institution/{institution_id}:
+    get:
+      tags:
+        - Admin > Institutions
+      summary: show institution detail
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: institution_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8000
+            Date:
+              schema:
+                type: string
+                example: Tue, 26 Dec 2023 16:49:33 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.2.11
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 1
+                  name: PCPS College
+                  address: Kupondole
+                  email: pcps@gmail.com
+                  established_year: '2018'
+                  contact_number: '9845677786'
+                  website_url: pcpscollege.com.np
+                  created_at: '2023-12-26T14:55:18.000000Z'
+                  updated_at: '2023-12-26T14:55:18.000000Z'
+  /api/student-class:
+    post:
+      tags:
+        - Admin > Student Class
+      summary: create class
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                class_name:
                   type: integer
-                  example: '1234'
+                  example: '4'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8000
+            Date:
+              schema:
+                type: string
+                example: Tue, 26 Dec 2023 17:07:23 GMT
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.2.11
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  institution_id: 1
+                  class_name: '4'
+                  updated_at: '2023-12-26T17:07:23.000000Z'
+                  created_at: '2023-12-26T17:07:23.000000Z'
+                  id: 1
+                message: Class created successfully!
+    get:
+      tags:
+        - Admin > Student Class
+      summary: show all class
+      security:
+        - bearerAuth: []
       parameters:
         - name: Accept
           in: header
